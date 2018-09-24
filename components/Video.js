@@ -14,7 +14,7 @@ import VideoPlayer from 'react-native-video'
 import KeepAwake from 'react-native-keep-awake'
 import Orientation from 'react-native-orientation'
 import Icons from 'react-native-vector-icons/MaterialIcons'
-import { Controls } from './'
+import { Controls } from './Controls'
 import { checkSource } from './utils'
 const Win = Dimensions.get('window')
 const backgroundColor = '#000'
@@ -89,7 +89,7 @@ class Video extends Component {
   onLoad(data) {
     if (!this.state.loading) return
     this.props.onLoad(data)
-    const { height, width } = data.naturalSize   
+    const { height, width } = data.naturalSize
     const ratio = height === 'undefined' && width === 'undefined' ?
       (9 / 16) : (height / width)
     const inlineHeight = this.props.lockRatio ?
